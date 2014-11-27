@@ -1,0 +1,5 @@
+# Udev rules for DSI II PRO CCD camera
+
+# Camera inserted.
+ATTRS{idVendor}=="156c", ATTRS{idProduct}=="0100", RUN+="/sbin/fxload -t fx2 -I /lib/firmware/dsi2pro.hex -D $env{DEVNAME}"
+ATTRS{idVendor}=="156c", ATTRS{idProduct}=="0101", OWNER="root", GROUP="video", MODE="0664", SYMLINK+="DSI2Pro"
